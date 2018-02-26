@@ -9,8 +9,20 @@ $amount = array($_POST['sugaramt'],$_POST['spiceamt'],$_POST['everythingniceamt'
 $email = $_POST['email'];
 $password = $_POST['password'];
 $ship = $_POST['shipping'];
+
+if($ship == "Overnight ($50)"){
+    $shipAmt = 50;
+}
+else if($ship == "Three day ($5)"){
+    $shipAmt = 5;
+}
+else{
+    $shipAmt = 0;
+}
+
+
 $chemx = rand(1,100);
-$total = $amount[0]*2  + $amount[1]*5 + $amount[2]*40 + $amount[3]*$chemx + $ship;
+$total = $amount[0]*2  + $amount[1]*5 + $amount[2]*40 + $amount[3]*$chemx + $shipAmt;
 
 echo "<h1> Welcome </h1>";
 echo "<h3> Your password: " . $password . "</h3>";
@@ -21,6 +33,7 @@ echo "<tr><td> Sugar </td> <td>". $amount[0] . "</td><td> $2 </td> <td> " . $amo
 echo "<tr><td> Spice </td> <td>". $amount[1] . "</td><td> $5 </td> <td> " . $amount[1]*5 . "</td></tr>";
 echo "<tr><td> Everything Nice </td> <td>". $amount[2] . "</td><td> $40 </td> <td> " . $amount[2]*40 . "</td></tr>";
 echo "<tr><td> Chemical X </td> <td>". $amount[3] . "</td><td> $" . $chemx ." </td> <td> " . $amount[3]*$chemx . "</td></tr>";
+echo "<tr><td> Shipping </td><td>" . $ship . "</td><td> $" . $shipAmt . "</td><td>" . $shipAmt . "</td></tr>";
 echo "<tr><td> </td> <td> Total </td><td>  </td><td>". $total  ."</td></tr>";
 echo "</table>";
 
