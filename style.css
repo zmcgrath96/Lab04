@@ -1,0 +1,18 @@
+.jumbotron
+{
+    background-image: url("ppg.jpeg");
+    opacity: .5;
+    background-size: 43%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: lightseagreen;
+    color:black;
+}
+
+.receipt{
+    color: black;
+    background-color: lightgray;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+}
